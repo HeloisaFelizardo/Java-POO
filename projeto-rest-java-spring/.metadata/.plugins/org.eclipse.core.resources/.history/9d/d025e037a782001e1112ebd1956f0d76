@@ -1,0 +1,6 @@
+package com.devsuperior.demo.controller;
+
+@RestController
+public class ProductController {
+
+}
