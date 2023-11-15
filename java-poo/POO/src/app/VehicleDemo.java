@@ -1,5 +1,7 @@
 package app;
 
+// Classe sem construtor
+
 class Vehicle{
 	int passengers; //Número de passageiros
 	int fuelcap; // Capacidade de armazenamento de combústivel em galões
