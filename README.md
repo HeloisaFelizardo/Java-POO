@@ -1,1 +1,1 @@
-# Java Spring Projects, POO and simple programs
+# Java Spring Projects, POO and Algorithms
