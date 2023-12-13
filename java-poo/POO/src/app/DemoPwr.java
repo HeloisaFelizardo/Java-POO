@@ -6,7 +6,7 @@ class Pwr{
 	double val;
 	
 	Pwr(double base, int exp){
-		this.b = base;
+		this.b = base; // This referencia a variável de instância 'b' e não o parâmetro
 		this.e = exp;
 		
 		this.val = 1;

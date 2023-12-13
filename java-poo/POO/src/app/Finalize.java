@@ -12,7 +12,7 @@ class FDemo{
 	
 	// Gera um objeto que é imediatamente destruido
 	void generator(int i) {
-		FDemo o = new FDemo(i);
+		FDemo objeto = new FDemo(i);
 	}
 }
 
