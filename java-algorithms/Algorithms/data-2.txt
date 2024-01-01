@@ -1,0 +1,5 @@
+sauli,32
+tarja,30
+aaro,1
+martti,44
+lennu,0

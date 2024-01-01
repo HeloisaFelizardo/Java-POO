@@ -1,0 +1,55 @@
+Neste exercício, trabalharemos com arquivos armazenados no formato CSV. Cada linha do arquivo contém o time da casa, o time visitante, os pontos do time da casa e os pontos do time visitante, todos separados por vírgulas.
+
+Você pode ver um exemplo abaixo do conteúdo do arquivo. O arquivo mostrado abaixo também está incluído no modelo de exercício com o nome "data.csv".
+
+Dados de amostra
+ENCE,Vitalidade,9,16
+ENCE,Vitalidade,16,12
+ENCE,Vitalidade,9,16
+ENCE,Heroico,10,16
+SJ,ENCE,0,16
+SJ,ENCE,3,16
+FURIA,NRG,7,16
+FURIA,Perspectivas,16,1
+
+Escreva um programa que solicite ao usuário um nome de arquivo e depois leia as estatísticas de correspondência do arquivo. O programa então solicita ao usuário o nome de uma equipe e imprime os dados especificados nas partes a seguir para essa equipe.
+
+Jogos jogados
+Implemente a capacidade de gerar o número de jogos disputados por qualquer equipe. Estamos usando o arquivo data.csv mencionado acima.
+
+Exemplo de saída
+Arquivo:
+dados.csv
+Equipe:
+FÚRIA
+Jogos: 2
+
+Exemplo de saída
+Arquivo:
+dados.csv
+Equipe:
+ENCE
+Jogos: 6
+
+Vitórias e derrotas
+Estenda o programa para que ele tenha a capacidade de imprimir o número de vitórias e derrotas de uma determinada equipe. O vencedor de um jogo é o time que conquistou mais pontos com ele.
+
+Você pode assumir que os jogos não podem ser empatados. Abaixo, estamos usando o arquivo data.csv mencionado acima.
+
+Exemplo de saída
+Arquivo:
+dados.csv
+Equipe:
+FÚRIA
+Jogos: 2
+Vitórias: 1
+Perdas: 1
+
+Exemplo de saída
+Arquivo:
+dados.csv
+Nome:
+ENCE
+Jogos: 6
+Vitórias: 3
+Perdas: 3
