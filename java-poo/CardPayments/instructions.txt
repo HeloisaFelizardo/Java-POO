@@ -1,0 +1,35 @@
+Part 1:
+
+Na parte anterior criamos uma classe chamada PaymentCard. O cartão tinha métodos para comer com preços acessíveis e saudáveis, 
+e também para adicionar dinheiro ao cartão.
+
+Entretanto, houve um problema com a classe PaymentCard implementada dessa maneira. 
+O cartão conhecia os preços dos diferentes almoços e, portanto, conseguiu diminuir o saldo na quantia adequada. 
+E se os preços aumentarem? Ou novos itens são adicionados à lista de produtos oferecidos? Uma alteração nos preços significaria que 
+todos os cartões existentes teriam de ser substituídos por novos cartões que conhecessem os novos preços.
+
+Uma solução melhorada é tornar os cartões “burros”; desconhecem os preços e produtos que são vendidos e apenas acompanham o seu saldo. 
+Toda a inteligência fica melhor colocada em objetos separados, terminais de pagamento.
+
+Vamos primeiro implementar o método "burro" versão do PaymentCard. O cartão só possui métodos para solicitar saldo, 
+adicionar dinheiro e retirar dinheiro. Complete o método public boolean takeMoney(double amount) na classe abaixo 
+(e encontrado no modelo de exercício), usando o seguinte como guia:
+
+Part 2:
+
+Ao visitar uma cafeteria estudantil, o cliente paga em dinheiro ou com cartão. 
+O caixa usa um terminal de pagamento para cobrar o cartão ou processar o pagamento em dinheiro. 
+Primeiro, vamos criar um terminal adequado para pagamentos em dinheiro.
+
+O contorno do terminal de pagamento. Os comentários dentro dos métodos informam a funcionalidade desejada:
+
+Part 3:
+
+Vamos estender nosso terminal de pagamento para também suportar pagamentos com cartão. 
+Vamos criar novos métodos para o terminal. Recebe como parâmetro um cartão de pagamento, 
+e diminui seu saldo pelo preço da refeição que foi adquirida.
+
+Part 4:
+
+Vamos criar um método para o terminal que pode ser usado para adicionar dinheiro a um cartão de pagamento. 
+Lembre-se que o pagamento recebido ao adicionar dinheiro ao cartão fica armazenado no cadastro. 

@@ -1,0 +1,17 @@
+Vários construtores
+Implemente uma classe chamada Counter. A classe contém um número cujo valor pode ser incrementado e decrementado. A classe deve ter os seguintes construtores:
+
+public Counter(int startValue)define o valor inicial do contador como startValue.
+
+public Counter()define o valor inicial do contador como 0.
+
+E os seguintes métodos:
+
+public int value()retorna o valor atual do contador
+public void increase()aumenta o valor em 1
+public void decrease()diminui o valor em 1
+Métodos alternativos
+Implementar versões que recebem um parâmetro dos métodos increase e decrease.
+
+public void increase(int increaseBy)aumenta o valor do contador pelo valor de aumentoBy. Se o valor de raiseBy for negativo, o valor do contador não muda.
+public void decrease(int decreaseBy)diminui o valor do contador pelo valor de diminuiçãoBy. Se o valor de diminuiçãoBy for negativo, o valor do contador não muda.

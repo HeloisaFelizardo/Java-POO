@@ -16,6 +16,10 @@ public class Person {
     	this.height = newHeight;
     }
     
+    public int getHeight() {
+		return height;
+	}
+    
     public void setWeight(int newWeight) {
     	this.weight = newWeight;
     }
