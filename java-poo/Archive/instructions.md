@@ -4,7 +4,7 @@ O programa deve ler itens do usuário. Quando todos os itens do usuário forem l
 
 Para cada item deverá ser lido seu identificador e nome. Se o identificador ou nome estiver vazio, o programa para de solicitar entrada e imprime todas as informações do item.
 
-## Exemplo de impressão:
+### Exemplo de impressão:
 
 Exemplo de saída
 
@@ -56,12 +56,13 @@ O formato de impressão dos itens deve ser identifier: name.
 
 Atenção! Não imprima os dois pontos (:) em nenhum outro lugar da saída do programa.
 
-Você imprime apenas uma vez (por item)
+## Você imprime apenas uma vez (por item)
+
 Modifique o programa para que após inserir os itens, cada item seja impresso no máximo uma vez. Dois itens devem ser considerados iguais se os seus identificadores forem iguais (pode haver variação nos seus nomes em diferentes países, por exemplo).
 
 Se o usuário inserir o mesmo item diversas vezes, a impressão utilizará o item que foi adicionado primeiro.
 
-Exemplo de saída
+### Exemplo de saída
 
 Identificador? (vazio irá parar)
 
