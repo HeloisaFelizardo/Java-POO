@@ -1,0 +1,93 @@
+No exercício Cartão de pagamento usamos uma variável de objeto de tipo duplo para armazenar a quantia de dinheiro. Em aplicações reais esta não é a abordagem que você deseja adotar, pois, como vimos, calcular com duplas não é exato. Uma forma mais razoável de lidar com quantias de dinheiro é criar uma classe própria para esse fim. Aqui está um layout para a aula:
+
+public class Money {
+
+    private final int euros;
+    private final int cents;
+
+    public Money(int euros, int cents) {
+        this.euros = euros;
+        this.cents = cents;
+    }
+
+    public int euros() {
+        return euros;
+    }
+
+    public int cents() {
+        return cents;
+    }
+
+    public String toString() {
+        String zero = "";
+        if (cents <= 10) {
+            zero = "0";
+        }
+
+        return euros + "." + zero + cents + "e";
+    }
+}
+A palavra final usada na definição de variáveis ​​de objeto chama a atenção. O resultado desta palavra é que os valores dessas variáveis ​​de objeto não podem ser modificados depois de terem sido definidos no construtor. Os objetos da classe Money são imutáveis, portanto imutáveis — se quisermos, por exemplo. aumentar a quantidade de dinheiro, devemos criar um novo objeto para representar essa nova quantidade de dinheiro.
+
+A seguir, criaremos algumas operações para processar dinheiro.
+
+Part 1:
+Primeiro crie o método public Money plus(Money addition) que retorna um novo objeto monetário que vale o valor total do objeto cujo método foi chamado e do objeto que é recebido como parâmetro.
+
+A base do método é a seguinte:
+
+public Money plus(Money addition) {
+    Money newMoney = new Money(...); // create a new Money object that has the correct worth
+
+    // return the new Money object
+    return newMoney;
+}
+Aqui estão alguns exemplos de como o método funciona.
+
+Money a = new Money(10,0);
+Money b = new Money(5,0);
+
+Money c = a.plus(b);
+
+System.out.println(a);  // 10.00e
+System.out.println(b);  // 5.00e
+System.out.println(c);  // 15.00e
+
+a = a.plus(c);          // NB: a new Money object is created, and is placed "at the end of the strand connected to a"
+//  the old 10 euros at the end of the strand disappears and the Java garbage collector takes care of it
+
+System.out.println(a);  // 25.00e
+System.out.println(b);  // 5.00e
+System.out.println(c);  // 15.00e
+
+Part 2:
+Crie o método public boolean lessThan(Money compared) que retorne verdadeiro se o objeto monetário no qual o método é chamado tiver um valor menor que o objeto monetário fornecido como parâmetro.
+
+Money a = new Money(10, 0);
+Money b = new Money(3, 0);
+Money c = new Money(5, 0);
+
+System.out.println(a.lessThan(b));  // false
+System.out.println(b.lessThan(c));  // true
+
+Part 3:
+Escreva o método public Money minus(Money decreaser) que retorna um novo objeto monetário que vale a diferença entre o objeto cujo método foi chamado e o objeto recebido como parâmetro. Se a diferença for negativa, o valor do objeto monetário criado será definido como 0.
+
+Aqui estão exemplos de como o método funciona.
+
+Money a = new Money(10, 0);
+Money b = new Money(3, 50);
+
+Money c = a.minus(b);
+
+System.out.println(a);  // 10.00e
+System.out.println(b);  // 3.50e
+System.out.println(c);  // 6.50e
+
+c = c.minus(a);       // NB: a new Money object is created, and is placed "at the end of the strand connected to c"
+//  the old 6.5 euros at the end of the strand disappears and the Java garbage collector takes care of it
+
+
+System.out.println(a);  // 10.00e
+System.out.println(b);  // 3.50e
+System.out.println(c);  // 0.00e

@@ -1,0 +1,95 @@
+Na base de exercícios existe a aula Person, com a qual já estamos bastante familiarizados. Há também um esboço da aula HealthStation. Os objetos dos postos de saúde processam as pessoas de diferentes maneiras, por ex. pesar e alimentar as pessoas. Neste exercício construiremos um posto de saúde. O código da classe Person não deve ser modificado neste exercício!
+
+Part 1: Pesando pessoas
+No esboço do Posto de Saúde há um esboço do método weigh:
+
+public class HealthStation {
+
+    public int weigh(Person person) {
+        // return the weight of the person passed as the parameter
+        return -1;
+    }
+}
+O método recebe uma pessoa como parâmetro e tem como objetivo retornar ao seu chamador o peso dessa pessoa. As informações de peso podem ser encontradas chamando um método adequado da pessoa person. Portanto, sua tarefa é completar o código do método!
+
+Aqui está um programa principal onde um posto de saúde pesa duas pessoas:
+
+public static void main(String[] args) {
+    // example main program for the first section of the exercise
+
+    HealthStation childrensHospital = new HealthStation();
+
+    Person ethan = new Person("Ethan", 1, 110, 7);
+    Person peter = new Person("Peter", 33, 176, 85);
+
+    System.out.println(ethan.getName() + " weight: " + childrensHospital.weigh(ethan) + " kilos");
+    System.out.println(peter.getName() + " weight: " + childrensHospital.weigh(peter) + " kilos");
+}
+A saída deve ser a seguinte:
+
+Exemplo de saída
+Peso de Ethan: 7 quilos
+Peso de Peter: 85 quilos
+
+Part 2: Alimentando
+É possível modificar o estado do objeto que é recebido como parâmetro. Escreva um método chamado public void feed(Person person) para a estação de saúde. Deve aumentar o peso do parâmetro pessoa em um.
+
+A seguir está um exemplo em que as pessoas são pesadas primeiro e depois Ethan é alimentado três vezes no hospital infantil. Depois disso, as pessoas são pesadas novamente:
+
+public static void main(String[] args) {
+    HealthStation childrensHospital = new HealthStation();
+
+    Person ethan = new Person("Ethan", 1, 110, 7);
+    Person peter = new Person("Peter", 33, 176, 85);
+
+    System.out.println(ethan.getName() + " weight: " + childrensHospital.weigh(ethan) + " kilos");
+    System.out.println(peter.getName() + " weight: " + childrensHospital.weigh(peter) + " kilos");
+
+    childrensHospital.feed(ethan);
+    childrensHospital.feed(ethan);
+    childrensHospital.feed(ethan);
+
+    System.out.println("");
+
+    System.out.println(ethan.getName() + " weight: " + childrensHospital.weigh(ethan) + " kilos");
+    System.out.println(peter.getName() + " weight: " + childrensHospital.weigh(peter) + " kilos");
+}
+O resultado deve revelar que o peso de Ethan aumentou três:
+
+Exemplo de saída
+Peso de Ethan: 7 quilos
+Peso de Peter: 85 quilos
+
+Peso de Ethan: 10 quilos
+Peso de Peter: 85 quilos
+
+Part 3: Contando pesagens
+Crie um novo método chamado public int weighings() para a estação de integridade. Deve informar quantas pesagens o posto de saúde realizou. Observação! Você precisará de uma nova variável de objeto para contar o número de pesagens!. Programa principal de teste:
+
+public static void main(String[] args) {
+
+    HealthStation childrensHospital = new HealthStation();
+
+    Person ethan = new Person("Ethan", 1, 110, 7);
+    Person peter = new Person("Peter", 33, 176, 85);
+
+    System.out.println("weighings performed: " + childrensHospital.weighings());
+
+    childrensHospital.weigh(ethan);
+    childrensHospital.weigh(peter);
+
+    System.out.println("weighings performed: " + childrensHospital.weighings());
+
+    childrensHospital.weigh(ethan);
+    childrensHospital.weigh(ethan);
+    childrensHospital.weigh(ethan);
+    childrensHospital.weigh(ethan);
+
+    System.out.println("weighings performed: " + childrensHospital.weighings());
+}
+A saída é:
+
+Exemplo de saída
+pesagens realizadas: 0
+pesagens realizadas: 2
+pesagens realizadas: 6
