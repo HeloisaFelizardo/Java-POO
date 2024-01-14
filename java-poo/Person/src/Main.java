@@ -38,6 +38,8 @@ public class Main {
             System.out.println(pekka.getName() + " is underage ");
         }
         
+        System.out.println();
+        
         System.out.println(antti); // same as System.out.println(antti.toString());
         System.out.println(pekka); // same as System.out.println(pekka.toString());
         
@@ -50,8 +52,12 @@ public class Main {
         juhana.setHeight(175);
         juhana.setWeight(64);
 
+        System.out.println();
+        
         System.out.println(matti.getName() + ", body mass index is " + matti.bodyMassIndex());
         System.out.println(juhana.getName() + ", body mass index is " + juhana.bodyMassIndex());
+        
+        System.out.println();
         
         Person matt = new Person("Matt");
         matt.setWeight(86);
@@ -59,9 +65,12 @@ public class Main {
 
         Person jasper = new Person("Jasper");
         jasper.setWeight(34);
-        jasper.setHeight(132);
+        jasper.setHeight(132);        
 
         AmusementParkRide waterTrack = new AmusementParkRide("Water track", 140);
+        System.out.println(waterTrack);
+        
+        System.out.println();
 
         if (waterTrack.allowedToRide(matt)) {
             System.out.println(matt.getName() + " may enter the ride");
@@ -84,6 +93,8 @@ public class Main {
         System.out.println(muhammad);
         System.out.println(pascal);
         
+        System.out.println();
+        
         SimpleDate d1 = new SimpleDate(14, 2, 2011);
         SimpleDate d2 = new SimpleDate(21, 2, 2011);
         SimpleDate d3 = new SimpleDate(1, 3, 2011);
@@ -97,5 +108,7 @@ public class Main {
 
         System.out.println(d4 + " is earlier than " + d1 + ": " + d4.before(d1));
         System.out.println(d1 + " is earlier than " + d4 + ": " + d1.before(d4));
+        
+        
     }   
 }

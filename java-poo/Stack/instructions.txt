@@ -1,0 +1,68 @@
+Uma pilha é uma estrutura de dados que você pode adicionar e retirar. Sempre para o topo ou de cima.
+
+Adicionando à pilha e verificando o vazio
+Crie uma Stack classe que tenha uma lista de strings como variável de instância. Adicione os seguintes métodos à classe:
+
+public boolean isEmpty() - retorna um valor do tipo boolean (verdadeiro ou falso) que informa se a pilha está vazia ou não.
+
+public void add(String value)- Adiciona o valor fornecido como parâmetro ao topo da pilha.
+
+public ArrayList<String> values()- retorna os valores contidos na pilha como uma lista.
+
+Você pode testar sua classe com o seguinte código:
+
+Stack s = new Stack();
+System.out.println(s.isEmpty());
+System.out.println(s.values());
+s.add("Value");
+System.out.println(s.isEmpty());
+System.out.println(s.values());
+Exemplo de saída
+verdadeiro
+[]
+falso
+[Valor]
+
+Tirando da pilha
+Adicione à Stack classe um método public String take(), que retorna o valor mais alto (ou seja, o último valor adicionado ao deque)
+e o remove do a pilha.
+
+Stack s = new Stack();
+System.out.println(s.isEmpty());
+System.out.println(s.values());
+s.add("Value");
+System.out.println(s.isEmpty());
+System.out.println(s.values());
+String taken = s.take();
+System.out.println(s.isEmpty());
+System.out.println(s.values());
+System.out.println(taken);
+Exemplo de saída
+verdadeiro
+[]
+falso
+[Valor]
+verdadeiro
+[]
+Valor
+
+Stack s = new Stack();
+s.add("1");
+s.add("2");
+s.add("3");
+s.add("4");
+s.add("5");
+
+while (!s.isEmpty()) {
+    System.out.println(s.take());
+}
+Exemplo de saída
+5
+4
+3
+2
+1
+
+Dica! Quando um valor é adicionado a um ArrayList, ele vai para o final da lista.
+Como tal, o valor adicionado mais recentemente está no último índice da lista - o método size() fornecido pela lista 
+é útil para encontrar o último índice. Você pode remover um elemento de um índice específico usando o remove método fornecido pela lista.

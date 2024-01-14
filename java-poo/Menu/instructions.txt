@@ -1,0 +1,48 @@
+O restaurante gourmet 'Unicafe' no campus Kumpula da Universidade de Helsínquia precisa de um novo menu. 
+O chef entende de programação e quer um sistema de computador para gerenciar o cardápio. 
+Nesta tarefa, implementaremos o coração do sistema, a classe Menu.
+
+O modelo de exercício vem com uma Main classe que você pode usar para testar o menu. 
+Para a implementação do menu, você terá o seguinte código padrão:
+
+import java.util.ArrayList;
+
+public class Menu {
+
+    private ArrayList<String> meals;
+
+    public Menu() {
+        this.meals = new ArrayList<>();
+    }
+
+    // implement the required methods here
+}
+O objeto menu possui um ArrayList como variável de instância para armazenar os nomes dos pratos do menu. 
+O menu deve fornecer os seguintes métodos:
+
+public void addMeal(String meal)adiciona uma refeição ao menu. Se a refeição já estiver na lista, não deverá ser adicionada novamente.
+
+public void printMeals()imprime as refeições.
+
+public void clearMenu()limpa o menu.
+
+Assim que o menu estiver pronto, você pode usá-lo da seguinte maneira.
+
+Menu menu = new Menu();
+menu.addMeal("Tofu ratatouille");
+menu.addMeal("Chilli coconut chicken");
+menu.addMeal("Chilli coconut chicken");
+menu.addMeal("Meatballs with mustard sauce");
+
+menu.printMeals();
+menu.clearMenu();
+
+System.out.println();
+menu.addMeal("Tomato and mozzarella salad");
+menu.printMeals();
+Exemplo de saída
+Ratatouille de tofu
+Frango com pimenta e coco
+Almôndegas com molho de mostarda
+
+Salada de tomate e mussarela

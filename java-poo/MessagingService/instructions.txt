@@ -1,0 +1,12 @@
+O modelo de exercício vem com uma classe Message predefinida que pode ser usada para criar objetos que representam mensagens. 
+Cada mensagem tem um remetente e algum conteúdo.
+
+Implemente a classe MessagingService. A classe deve ter um construtor sem parâmetros e conter uma lista de Message objetos. 
+Depois disso, adicione os dois métodos a seguir à classe:
+
+public void add(Message message)- adiciona uma mensagem passada como parâmetro ao serviço de mensagens, 
+desde que o conteúdo da mensagem tenha no máximo 280 caracteres.
+
+public ArrayList<Message> getMessages()- retorna as mensagens adicionadas ao serviço de mensagens.
+
+Dica! Você pode descobrir o comprimento da string usando o método length() associado à string.
