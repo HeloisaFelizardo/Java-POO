@@ -22,6 +22,34 @@ public class AmusementParkRide {
 		this.riding.add(person);
 		return true;
 	}
+	
+	public Person getTallest() {
+	    // return a null reference if there's no one on the ride
+	    if (this.riding.isEmpty()) {
+	        return null;
+	    }
+
+	    // create an object reference for the object to be returned
+	    // its first value is the first object on the list
+	    Person returnObject = this.riding.get(0);
+
+	    // go through the list
+	    for (Person prs: this.riding) {
+	        // compare each object on the list
+	        // to the returnObject -- we compare heights
+	        // since we're searching for the tallest,
+
+	        if (returnObject.getHeight() < prs.getHeight()) {
+	            // if we find a taller person in the comparison,
+	            // we assign it as the value of the returnObject
+	            returnObject = prs;
+	        }
+	    }
+
+	    // finally, the object reference describing the
+	    // return object is returned
+	    return returnObject;
+	}
 
 	public String toString() {
 
@@ -41,4 +69,21 @@ public class AmusementParkRide {
 
 		return printOutput + "\n" + "on the ride:\n" + peopleOnRide;
 	}
+	
+	 public void removeEveryoneOnRide() {
+	        this.riding.clear();
+	    }
+	 
+	 public double averageHeightOfPeopleOnRide() {
+	        if (riding.isEmpty()) {
+	            return -1;
+	        }
+
+	        int sumOfHeights = 0;
+	        for (Person per: riding) {
+	            sumOfHeights += per.getHeight();
+	        }
+
+	        return 1.0 * sumOfHeights / riding.size();
+	    }
 }

@@ -1,0 +1,64 @@
+Praticaremos embrulhar presentes neste exercício. Vamos criar as classes Gift e Package. O presente tem nome e peso, 
+e a embalagem contém presentes.
+
+Part 1: Classe de presente
+Crie uma Gift classe, onde os objetos instanciados a partir dela representem diferentes tipos de presentes. 
+As informações registradas são o nome e o peso do item (kg).
+
+Adicione os seguintes métodos à classe:
+
+Construtor para o qual o nome e o peso do presente são dados como parâmetros
+
+Método public String getName(), que retorna o nome do presente
+
+Método public int getWeight(), que retorna o peso do presente
+
+Método public String toString(), que retorna uma string no formato "nome (peso kg)"
+
+A seguir está um exemplo da classe em uso:
+
+public class Main {
+    public static void main(String[] args) {
+        Gift book = new Gift("Harry Potter and the Philosopher's Stone", 2);
+
+        System.out.println("Gift's name: " + book.getName());
+        System.out.println("Gift's weight: " + book.getWeight());
+
+        System.out.println("Gift: " + book);
+    }
+}
+A saída de impressão do programa deve ser a seguinte:
+
+Exemplo de saída
+Nome do presente: Harry Potter e a Pedra Filosofal
+Peso do presente: 2
+Presente: Harry Potter e a Pedra Filosofal (2 kg)
+
+Part 2: Classe de pacote
+Crie uma Package classe à qual os presentes possam ser adicionados e que controle o peso total dos presentes no pacote. A classe deve conter:
+
+Um construtor sem parâmetros
+
+Método public void addGift(Gift gift), que adiciona o presente passado como parâmetro ao pacote. O método não retorna nenhum valor.
+
+Método public int totalWeight(), que retorna o peso total dos presentes do pacote.
+
+É recomendado armazenar os itens em um ArrayList objeto.
+
+ArrayList<Gift> gifts = new ArrayList<>();
+Um exemplo de caso de uso da classe é o seguinte:
+
+public class Main {
+    public static void main(String[] args) {
+        Gift book = new Gift("Harry Potter and the Philosopher's Stone", 2);
+
+        Package gifts = new Package();
+        gifts.addGift(book);
+        System.out.println(gifts.totalWeight());
+    }
+}
+A saída do programa deve ser a seguinte:
+
+Exemplo de saída
+2
+

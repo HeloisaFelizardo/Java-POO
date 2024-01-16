@@ -1,0 +1,16 @@
+O modelo de exercício vem com a aula SimpleCollection que você conhece dos exercícios anteriores. 
+Implemente o método public String longest() para a classe, que retorna a string mais longa da coleção. 
+Se a coleção estiver vazia, o método deverá retornar uma referência null.
+
+SimpleCollection j = new SimpleCollection("characters");
+System.out.println("Longest: " + j.longest());
+
+j.add("magneto");
+j.add("mystique");
+j.add("phoenix");
+
+System.out.println("Longest: " + j.longest());
+
+Exemplo de saída
+Mais longo: nulo
+Mais longo: mística

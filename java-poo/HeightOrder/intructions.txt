@@ -1,0 +1,144 @@
+Uma Person aula está incluída no modelo de exercício. Uma pessoa tem um nome e uma altura. 
+Neste exercício, implementaremos uma classe Room, que pode ser usada para adicionar pessoas e ordená-las de acordo com sua altura — 
+tirar uma pessoa da Class sempre retornará a pessoa mais baixa.
+
+A class deverá eventualmente funcionar da seguinte maneira.
+
+Parte 1: Class
+
+Criar Room classe. A classe deve conter uma lista de pessoas como uma variável de instância e deve ter um construtor sem parâmetros. 
+Além disso, adicione os seguintes métodos à classe:
+
+public void add(Person person)- adicione a pessoa passada como parâmetro à lista.
+
+public boolean isEmpty() - retorna um valor do tipo boolean true ou false, que informa se a Class está vazia ou não.
+
+public ArrayList<Person> getPersons()- retorna uma lista das pessoas na Class.
+
+Room room = new Room();
+System.out.println("Empty room? " + room.isEmpty());
+room.add(new Person("Lea", 183));
+room.add(new Person("Kenya", 182));
+room.add(new Person("Auli", 186));
+room.add(new Person("Nina", 172));
+room.add(new Person("Terhi", 185));
+System.out.println("Empty room? " + room.isEmpty());
+
+System.out.println("");
+for (Person person : room.getPersons()) {
+    System.out.println(person);
+}
+Exemplo de saída
+Class vazia? verdadeiro
+Class vazia? falso
+
+Léia (183 cm)
+Quênia (182 cm)
+Auli (186 cm)
+Nina (172 cm)
+Terhi (185 cm)
+
+Parte 2: Pessoa mais baixa
+
+Adicione um método public Person shortest() à classe Room, que retorna a pessoa mais baixa adicionada à Class. 
+Se a Class estiver vazia, uma referência nula será retornada. O método não deve retirar uma pessoa da Class.
+
+Room room = new Room();
+System.out.println("Shortest: " + room.shortest());
+System.out.println("Empty room? " + room.isEmpty());
+room.add(new Person("Lea", 183));
+room.add(new Person("Kenya", 182));
+room.add(new Person("Auli", 186));
+room.add(new Person("Nina", 172));
+room.add(new Person("Terhi", 185));
+System.out.println("Empty room? " + room.isEmpty());
+
+System.out.println("");
+for (Person person : room.getPersons()) {
+    System.out.println(person);
+}
+
+System.out.println();
+System.out.println("Shortest: " + room.shortest());
+System.out.println("");
+for (Person person : room.getPersons()) {
+    System.out.println(person);
+}
+
+Exemplo de saída
+
+Mais curto: nulo
+Class vazia? verdadeiro
+Class vazia? falso
+
+Léia (183 cm)
+Quênia (182 cm)
+Auli (186 cm)
+Nina (172 cm)
+Terhi (185 cm)
+
+Mais curto: Nina (172 cm)
+
+Léia (183 cm)
+Quênia (182 cm)
+Auli (186 cm)
+Nina (172 cm)
+Terhi (185 cm)
+
+Parte 3: Tirando de um quarto
+
+Adicione um public Person take() método à Room classe, que leva a pessoa mais baixa da Class. 
+Quando uma Class está vazia, ela retorna uma referência null.
+
+Room room = new Room();
+room.add(new Person("Lea", 183));
+room.add(new Person("Kenya", 182));
+room.add(new Person("Auli", 186));
+room.add(new Person("Nina", 172));
+room.add(new Person("Terhi", 185));
+
+System.out.println("");
+for (Person person : room.getPersons()) {
+    System.out.println(person);
+}
+
+System.out.println();
+System.out.println("Shortest: " + room.take());
+System.out.println("");
+for (Person person : room.getPersons()) {
+    System.out.println(person);
+}
+
+Exemplo de saída
+
+Léia (183 cm)
+Quênia (182 cm)
+Auli (186 cm)
+Nina (172 cm)
+Terhi (185 cm)
+
+Mais curto: Nina (172 cm)
+
+Léia (183 cm)
+Quênia (182 cm)
+Auli (186 cm)
+Terhi (185 cm)
+
+Agora é possível imprimir as pessoas por ordem de altura.
+
+Room room = new Room();
+room.add(new Person("Lea", 183));
+room.add(new Person("Kenya", 182));
+room.add(new Person("Auli", 186));
+room.add(new Person("Nina", 172));
+room.add(new Person("Terhi", 185));
+
+while (!room.isEmpty()) {
+    System.out.println(room.take());
+}
+Exemplo de saída
+Nina (172 cm)
+Quênia (182 cm)
+Léia (183 cm)
+Terhi (185 cm)
+Auli (186 cm)

@@ -1,0 +1,234 @@
+Neste exercício, criamos as classes Item, Suitcase e Hold para praticar o uso de objetos contendo outros objetos.
+
+Part 1: Classe de item
+Crie uma Item classe a partir da qual objetos possam ser instanciados para representar itens diferentes. 
+A informação a armazenar é o nome e peso do item (kg).
+
+Adicione os seguintes métodos à classe:
+
+Construtor que leva como parâmetros o nome e o peso do item
+
+Método public String getName(), que retorna o nome do item
+
+Método public int getWeight(), que retorna o peso do item
+
+Método public String toString(), que retorna a string "nome (peso kg)"
+
+A seguir está um exemplo da classe em uso:
+
+public class Main {
+    public static void main(String[] args) {
+        Item book = new Item("The lord of the rings", 2);
+        Item phone = new Item("Nokia 3210", 1);
+
+        System.out.println("The book's name: " + book.getName());
+        System.out.println("The book's weight: " + book.getWeight());
+
+        System.out.println("Book: " + book);
+        System.out.println("Phone: " + phone);
+    }
+}
+A saída de impressão do programa deve ser a seguinte:
+
+Exemplo de saída
+Nome do livro: Senhor dos Anéis
+Peso do livro: 2
+Livro: O Senhor dos Anéis (2 kg)
+Telefone: Nokia 3210 (1kg)
+
+Part 2: Classe de mala
+Crie uma Suitcase classe. A mala contém itens e um peso máximo que determina o peso máximo total dos itens.
+
+Adicione os seguintes métodos à classe:
+
+Construtor, ao qual é fornecido o peso máximo
+
+O método public void addItem(Item item), que adiciona o item passado como parâmetro à mala. O método não retorna um valor.
+
+O método public String toString(), que retorna a string "x itens (y kg)"
+
+É aconselhável armazenar os itens em um ArrayList objeto:
+
+ArrayList<Item> items = new ArrayList<>();
+A turma Suitcase deve garantir que o peso total dos itens dentro dela não exceda o limite máximo de peso. 
+Se esse limite for excedido como resultado do item a ser adicionado, o método addItem não deverá adicionar o novo item à mala.
+
+A seguir está um exemplo de caso de uso da classe:
+
+public class Main {
+    public static void main(String[] args) {
+        Item book = new Item("Lord of the rings", 2);
+        Item phone = new Item("Nokia 3210", 1);
+        Item brick = new Item("brick", 4);
+
+        Suitcase suitcase = new Suitcase(5);
+        System.out.println(suitcase);
+
+        suitcase.addItem(book);
+        System.out.println(suitcase);
+
+        suitcase.addItem(phone);
+        System.out.println(suitcase);
+
+        suitcase.addItem(brick);
+        System.out.println(suitcase);
+    }
+}
+A saída do programa deve ser a seguinte:
+
+Exemplo de saída
+0 itens (0 kg)
+1 item (2 kg)
+2 itens (3kg)
+2 itens (3kg)
+
+Parte 3: Formatação de idioma
+A declaração "1 item" não é exatamente o inglês correto - uma forma melhor seria "1 item". 
+A falta de itens também pode ser expressa como "nenhum item". Implemente esta mudança no método toString da classe Suitcase.
+
+A saída do programa anterior agora deve ser a seguinte:
+
+Exemplo de saída
+nenhum item (0 kg)
+1 peça (2kg)
+2 itens (3kg)
+2 itens (3kg)
+
+Parte 4: Todos os itens
+Adicione os seguintes métodos à classe Suitcase:
+
+um printItems método, que imprime todos os itens da mala
+
+um totalWeight método, que retorna o peso total dos itens
+
+A seguir está um exemplo de caso de uso da classe:
+
+public class Main {
+    public static void main(String[] args) {
+        Item book = new Item("Lord of the rings", 2);
+        Item phone = new Item("Nokia 3210", 1);
+        Item brick = new Item("brick", 4);
+
+        Suitcase suitcase = new Suitcase(10);
+        suitcase.addItem(book);
+        suitcase.addItem(phone);
+        suitcase.addItem(brick);
+
+        System.out.println("The suitcase contains the following items:");
+        suitcase.printItems();
+        System.out.println("Total weight: " + suitcase.totalWeight() + " kg");
+    }
+}
+A saída do programa deve ser a seguinte:
+
+Exemplo de saída
+A mala contém os seguintes itens:
+Senhor dos Anéis (2kg)
+Nokia 3210 (1kg)
+Tijolo (4 kg)
+Peso Total: 7kg
+
+Faça mais uma modificação em sua classe para usar apenas duas variáveis ​​de instância. 
+Um segura o peso máximo, o outro é a lista de itens da mala.
+
+Part 5: Item mais pesado
+Adicione à Suitcase classe um método heaviestItem, que retorna o maior item com base no peso. 
+Se vários itens compartilharem o peso mais pesado, o método poderá retornar qualquer um deles. 
+O método deve retornar uma referência de objeto. Se a mala estiver vazia, retorne o valor null.
+
+A seguir está um exemplo da classe em uso:
+
+public class Main {
+    public static void main(String[] args) {
+        Item book = new Item("Lord of the rings", 2);
+        Item phone = new Item("Nokia 3210", 1);
+        Item brick = new Item("Brick", 4);
+
+        Suitcase suitcase = new Suitcase(10);
+        suitcase.addItem(book);
+        suitcase.addItem(phone);
+        suitcase.addItem(brick);
+
+        Item heaviest = suitcase.heaviestItem();
+        System.out.println("Heaviest item: " + heaviest);
+    }
+}
+O programa deve imprimir o seguinte:
+
+Exemplo de saída
+Item mais pesado: Tijolo (4 kg)
+
+Parte 6: Classe de espera
+Crie uma classe Hold com os seguintes métodos:
+
+um construtor, ao qual é dado o peso máximo
+
+método public void addSuitcase(Suitcase suitcase) que adiciona a bagagem especificada ao porão
+
+método public String toString() que retorna a string "x malas (y kg)"
+
+Armazene suas malas em uma estrutura ArrayList adequada.
+
+A turma Hold deve garantir que o peso total das malas que contém não exceda o peso máximo. 
+Caso o peso máximo seja ultrapassado devido à adição de nova bagagem, o método addSuitcase não deverá adicionar a nova mala.
+
+A seguir está um exemplo da classe em uso:
+
+public class Main {
+    public static void main(String[] args) {
+        Item book = new Item("Lord of the rings", 2);
+        Item phone = new Item("Nokia 3210", 1);
+        Item brick = new Item("brick", 4);
+
+        Suitcase adasCase = new Suitcase(10);
+        adasCase.addItem(book);
+        adasCase.addItem(phone);
+
+        Suitcase pekkasCase = new Suitcase(10);
+        pekkasCase.addItem(brick);
+
+        Hold hold = new Hold(1000);
+        hold.addSuitcase(adasCase);
+        hold.addSuitcase(pekkasCase);
+
+        System.out.println(hold);
+    }
+}
+A saída do programa deve ser a seguinte:
+
+Exemplo de saída
+2 malas (7kg)
+
+Parte 7: O conteúdo do Hold
+Adicione à classe Hold o método public void printItems() que imprime todos os itens contidos nas malas do porão.
+
+A seguir está um exemplo da classe em uso:
+
+public class Main {
+    public static void main(String[] args) {
+        Item book = new Item("Lord of the rings", 2);
+        Item phone = new Item("Nokia 3210", 1);
+        Item brick = new Item("brick", 4);
+
+        Suitcase adasCase = new Suitcase(10);
+        adasCase.addItem(book);
+        adasCase.addItem(phone);
+
+        Suitcase pekkasCase = new Suitcase(10);
+        pekkasCase.addItem(brick);
+
+        Hold hold = new Hold(1000);
+        hold.addSuitcase(adasCase);
+        hold.addSuitcase(pekkasCase);
+
+        System.out.println("The suitcases in the hold contain the following items:");
+        hold.printItems();
+    }
+}
+A saída do programa deve ser a seguinte:
+
+Exemplo de saída
+As malas no porão contêm os seguintes itens:
+Senhor dos Anéis (2kg)
+Nokia 3210 (1kg)
+tijolo (4 kg)

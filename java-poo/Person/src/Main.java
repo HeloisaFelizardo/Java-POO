@@ -49,7 +49,7 @@ public class Main {
         matti.setHeight(180);
         matti.setWeight(86);
 
-        juhana.setHeight(175);
+        juhana.setHeight(132);
         juhana.setWeight(64);
 
         System.out.println();
@@ -65,7 +65,10 @@ public class Main {
 
         Person jasper = new Person("Jasper");
         jasper.setWeight(34);
-        jasper.setHeight(132);        
+        jasper.setHeight(132);   
+        
+        Person awak = new Person("Awak");
+        awak.setHeight(194);
 
         AmusementParkRide waterTrack = new AmusementParkRide("Water track", 140);
         System.out.println(waterTrack);
@@ -85,6 +88,29 @@ public class Main {
         }
 
         System.out.println(waterTrack);
+        waterTrack.removeEveryoneOnRide();
+        
+        System.out.println();
+        System.out.println(waterTrack);
+        
+        System.out.println();       
+
+        AmusementParkRide hurjakuru = new AmusementParkRide("Hurjakuru", 140);
+
+        hurjakuru.allowedToRide(matti);
+        hurjakuru.allowedToRide(juhana);
+        hurjakuru.allowedToRide(awak);
+
+        System.out.println(hurjakuru);
+        System.out.println(hurjakuru.averageHeightOfPeopleOnRide());
+
+        System.out.println();
+        
+        System.out.println(hurjakuru.getTallest().getName());
+        Person tallest = hurjakuru.getTallest();
+        System.out.println(tallest.getName());
+        
+        System.out.println();
         
         SimpleDate date = new SimpleDate(1, 1, 780);
         Person muhammad = new Person("Muhammad ibn Musa al-Khwarizmi", date);
