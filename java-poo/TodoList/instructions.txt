@@ -1,0 +1,117 @@
+Neste exercício vamos criar um programa que pode ser usado para criar e modificar uma lista de tarefas. 
+O produto final funcionará da seguinte maneira.
+
+Exemplo de saída
+Comando: adicionar
+Tarefa: ir à loja
+Comando: adicionar
+Tarefa: aspiração
+Comando: lista
+1: vá até a loja
+2: aspirar
+Comando: concluído
+Qual tarefa foi concluída? 2
+Tarefa ir até a loja tehty
+Comando: lista
+1: vá até a loja
+Comando: adicionar
+Tarefa: programa
+Comando: lista
+1: vá até a loja
+2: programa
+Comando: parar
+
+Construiremos o programa em partes.
+
+Part 1: Lista de afazeres
+Crie uma classe chamada TodoList. Deverá ter um construtor sem parâmetros e os seguintes métodos:
+
+public void add(String task)- adicione a tarefa passada como parâmetro à lista de tarefas.
+public void print()- imprime os exercícios. Cada tarefa tem um número associado na instrução print — use o índice da tarefa aqui (+1).
+public void remove(int number)- remove a tarefa associada ao número fornecido; o número é aquele visto associado à tarefa na impressão.
+TodoList list = new TodoList();
+list.add("read the course material");
+list.add("watch the latest fool us");
+list.add("take it easy");
+
+list.print();
+list.remove(2);
+
+System.out.println();
+list.print();
+Exemplo de saída
+1: leia o material do curso
+2: assista o último nos enganar
+3: vá com calma
+
+1: leia o material do curso
+2: vá com calma
+
+NB! Você pode assumir que o método remove recebe um número que corresponde a uma tarefa real. 
+O método só precisa funcionar corretamente uma vez após cada chamada de impressão.
+
+Outro exemplo:
+
+TodoList list = new TodoList();
+list.add("read the course material");
+list.add("watch the latest fool us");
+list.add("take it easy");
+list.print();
+list.remove(2);
+list.print();
+list.add("buy raisins");
+list.print();
+list.remove(1);
+list.remove(1);
+list.print();
+Exemplo de saída
+1: leia o material do curso
+2: assista o último nos enganar
+3: vá com calma
+1: leia o material do curso
+2: vá com calma
+1: leia o material do curso
+2: vá com calma
+3: compre passas
+1: compre passas
+
+Part 2: Interface de usuário
+Em seguida, implemente uma classe chamada UserInterface. Deve ter um construtor com dois parâmetros. 
+O primeiro parâmetro é uma instância da classe TodoList e o segundo é uma instância da classe Scanner. 
+Além do construtor, a classe deve ter o método public void start() que é usado para iniciar a interface de usuário de texto. 
+A UI de texto funciona com uma instrução de loop eterno (while-true) e deve oferecer os seguintes comandos ao usuário:
+
+O comando stop interrompe a execução do loop, após o qual a execução do programa avança para fora do método start.
+
+O comando add solicita ao usuário a próxima tarefa a ser adicionada. Assim que o usuário entrar nesta tarefa, 
+ela deverá ser adicionada à lista de tarefas.
+
+O comando list imprime todas as tarefas da lista de tarefas.
+
+O comando remove pede ao usuário para inserir o id da tarefa a ser removida. Quando isso for inserido, 
+a tarefa especificada deverá ser removida da lista de tarefas.
+
+Abaixo está um exemplo de como o programa deve funcionar.
+
+Exemplo de saída
+Comando: adicionar
+Para adicionar: escreva uma redação
+Comando: adicionar
+Para adicionar: leia um livro
+Comando: lista
+1: escreva um ensaio
+2: leia um livro
+Comando: remover
+Qual deles foi removido? 1
+Comando: lista
+1: leia um livro
+Comando: remover
+Qual deles foi removido? 1
+Comando: lista
+Comando: adicionar
+Para adicionar: parar
+Comando: lista
+1: parar
+Comando: parar
+
+Atenção! A interface do usuário deve usar TodoList e Scanner que são passados ​​​​como parâmetros para o construtor.

@@ -1,0 +1,108 @@
+A base de exercícios contém uma classe SimpleDictionary que permite armazenar palavras e suas traduções. 
+A implementação interna da aula contém algumas técnicas (ainda) não abordadas no curso. No entanto, é bastante simples usá-lo:
+
+SimpleDictionary book = new SimpleDictionary();
+book.add("one", "yksi");
+book.add("two", "kaksi");
+
+System.out.println(book.translate("one"));
+System.out.println(book.translate("two"));
+System.out.println(book.translate("three"));
+Exemplo de saída
+um
+dois
+nulo
+
+Neste exercício você implementará uma interface de usuário de texto que usa a classe SimpleDictionary. 
+E talvez aprenda algumas palavras em finlandês enquanto faz isso!
+
+Part 1: Iniciando e parando a IU
+Implemente a classe TextUI que recebe como parâmetros construtores os objetos Scanner e SimpleDictionary. Em seguida, forneça à classe um método chamado public void start(). O método deve funcionar da seguinte forma:
+
+O método pede um comando ao usuário
+Se o comando for end, a UI imprimirá a string "Tchau, tchau!" e a execução do método start termina.
+Caso contrário, a IU de texto imprime a mensagem Unknown command e solicita um novo comando, retornando à etapa 1.
+Scanner scanner = new Scanner(System.in);
+SimpleDictionary dictionary = new SimpleDictionary();
+
+TextUI ui = new TextUI(scanner, dictionary);
+ui.start();
+Exemplo de saída
+Comando: alguma coisa
+Comando desconhecido
+Comando: adicionar
+Comando desconhecido
+Comando: fim
+Tchau!
+
+Part 2: Adicionando uma tradução
+Modifique o método public void start() para que funcione da seguinte maneira:
+
+O método pede um comando ao usuário.
+Se o comando for end, a UI imprimirá a string "Tchau, tchau!" e a execução do método start termina.
+Se o comando for add, a IU de texto solicita ao usuário uma palavra e uma tradução, cada uma em sua própria linha. Depois disso, as palavras são armazenadas no dicionário e o método continua solicitando um novo comando (volta ao estágio 1).
+Caso contrário, a IU de texto imprime a mensagem Unknown command e solicita um novo comando, retornando à etapa 1.
+Exemplo de saída
+Comando: alguma coisa
+Comando desconhecido
+Comando: adicionar
+Palavra: lúcio
+Tradução: hauki
+Comando: alterar
+Comando desconhecido
+Comando: fim
+Tchau!
+
+No exemplo acima, adicionamos a palavra "pike" e sua tradução "hauki" para o objeto SimpleDictionary. Depois de sair da interface de usuário de texto, o dicionário poderá ser usado da seguinte maneira:
+
+Scanner scanner = new Scanner(System.in);
+SimpleDictionary dictionary = new SimpleDictionary();
+
+TextUI textUI = new TextUI(scanner, dictionary);
+textUI.start();
+System.out.println(dictionary.translate("pike")); // prints the string "hauki"
+
+Part 3: Traduzindo uma palavra
+Modifique o método public void start() para que funcione da seguinte maneira:
+
+O método pede um comando ao usuário.
+Se o comando for end, a UI imprimirá a string "Tchau, tchau!" e a execução do método start termina.
+Se o comando for add, a IU de texto solicita ao usuário uma palavra e uma tradução, cada uma em sua própria linha. Depois disso, as palavras são armazenadas no dicionário e o método continua solicitando um novo comando (volta ao estágio 1).
+Se o comando for search, a IU de texto solicitará ao usuário a palavra a ser traduzida. Depois disso ele imprime a tradução da palavra, e o método continua solicitando um novo comando (volta ao estágio 1).
+Caso contrário, a IU de texto imprime a mensagem Unknown command e solicita um novo comando, retornando à etapa 1.
+Exemplo de saída
+Comando: alguma coisa
+Comando desconhecido
+Comando: adicionar
+Palavra: lúcio
+Tradução: hauki
+Comando: alterar
+Comando desconhecido
+Comando: pesquisar
+Para ser traduzido: pique
+Tradução: hauki
+Comando: pesquisar
+Para ser traduzido: cenoura
+Tradução: nulo
+Comando: fim
+Tchau!
+
+Part 4: Limpando a tradução
+Modifique a funcionalidade de pesquisa da IU para que, se a palavra não for encontrada (ou seja, o dicionário retornar null), a IU imprima a mensagem "Palavra (palavra pesquisada ) não foi encontrado".
+
+Exemplo de saída
+Comando: alguma coisa
+Comando desconhecido
+Comando: adicionar
+Palavra: lúcio
+Tradução: hauki
+Comando: alterar
+Comando desconhecido
+Comando: pesquisar
+Para ser traduzido: pique
+Tradução: hauki
+Comando: pesquisar
+Para ser traduzido: cenoura
+A palavra cenoura não foi encontrada
+Comando: fim
+Tchau!
