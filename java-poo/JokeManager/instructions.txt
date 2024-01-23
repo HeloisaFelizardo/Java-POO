@@ -1,0 +1,125 @@
+A base de exercícios contém o seguinte programa que foi escrito "no principal".
+
+Scanner scanner = new Scanner(System.in);
+ArrayList<String> jokes = new ArrayList<>();
+System.out.println("What a joke!");
+
+while (true) {
+    System.out.println("Commands:");
+    System.out.println(" 1 - add a joke");
+    System.out.println(" 2 - draw a joke");
+    System.out.println(" 3 - list jokes");
+    System.out.println(" X - stop");
+
+    String command = scanner.nextLine();
+
+    if (command.equals("X")) {
+        break;
+    }
+
+    if (command.equals("1")) {
+        System.out.println("Write the joke to be added:");
+        String joke = scanner.nextLine();
+        jokes.add(joke);
+    } else if (command.equals("2")) {
+        System.out.println("Drawing a joke.");
+
+        if (jokes.isEmpty()) {
+            System.out.println("Jokes are in short supply.");
+        } else {
+            Random draw = new Random();
+            int index = draw.nextInt(jokes.size());
+            System.out.println(jokes.get(index));
+        }
+
+    } else if (command.equals("3")) {
+        System.out.println("Printing the jokes.");
+        for (String joke : jokes) {
+            System.out.println(joke);
+        }
+    }
+}
+O aplicativo é na prática um armazenamento de piadas. 
+Você pode adicionar piadas, obter uma piada aleatória e as piadas armazenadas podem ser impressas. 
+Neste exercício o programa é dividido em partes de forma orientada.
+
+Part 1: Gerenciador de piadas
+Crie uma classe chamada JokeManager e mova a funcionalidade para gerenciar piadas nela. 
+A classe deve ter um construtor sem parâmetros e os seguintes métodos:
+
+public void addJoke(String joke)- acrescenta uma piada ao gerente.
+public String drawJoke()- escolhe uma piada aleatoriamente e a devolve. 
+Se não houver piadas armazenadas no gerenciador de piadas, o método deverá retornar a string "As piadas estão em falta.".
+public void printJokes()- imprime todas as piadas armazenadas no gerenciador de piadas.
+Um exemplo de como usar a classe:
+
+JokeManager manager = new JokeManager();
+manager.addJoke("What is red and smells of blue paint? - Red paint.");
+manager.addJoke("What is blue and smells of red paint? - Blue paint.");
+
+System.out.println("Drawing jokes:");
+for (int i = 0; i < 5; i++) {
+    System.out.println(manager.drawJokes());
+}
+
+System.out.println("");
+System.out.println("Printing jokes:");
+manager.printJokes();
+Abaixo está uma possível saída do programa. Observe que provavelmente as piadas não serão desenhadas como neste exemplo.
+
+Exemplo de saída
+
+Desenhando piadas:
+O que é azul e cheira a tinta vermelha? - Tinta azul.
+O que é vermelho e cheira a tinta azul? - Tinta vermelha.
+O que é azul e cheira a tinta vermelha? - Tinta azul.
+O que é azul e cheira a tinta vermelha? - Tinta azul.
+O que é azul e cheira a tinta vermelha? - Tinta azul.
+
+Imprimindo piadas:
+O que é vermelho e cheira a tinta azul? - Tinta vermelha.
+O que é azul e cheira a tinta vermelha? - Tinta azul.
+
+Part 2: Interface de usuário
+Crie uma classe chamada UserInterface e mova a funcionalidade da UI do programa para lá. 
+A classe deve ter um construtor com dois parâmetros. 
+O primeiro parâmetro é uma instância da classe JokeManager e o segundo parâmetro é uma instância da classe Scanner. 
+Além disso, a classe deve ter o método public void start() que pode ser usado para iniciar a interface do usuário.
+
+A interface do usuário deve fornecer ao usuário os seguintes comandos:
+
+X - finalização: sai do método start.
+1- adicionando: solicita ao usuário que a piada seja adicionada ao gerenciador de piadas e depois a adiciona.
+2- desenho: escolhe uma piada aleatória do gerenciador de piadas e a imprime. 
+Se não houver piadas no gerenciador, a string "Piadas estão em falta." será impresso.
+3- impressão: imprime todas as piadas armazenadas no gerenciador de piadas.
+Um exemplo de como usar a UI:
+
+JokeManager manager = new JokeManager();
+Scanner scanner = new Scanner(System.in);
+
+UserInterface ui = new UserInterface(manager, scanner);
+ui.start();
+Exemplo de saída
+Comandos:
+1 – adicione uma piada
+2 – desenhe uma piada
+3 - liste piadas
+X-parar
+1
+Escreva a piada a ser adicionada:
+Você ouviu falar do astronauta claustrofóbico? — Ele só precisava de um pouco de espaço.
+Comandos:
+1 – adicione uma piada
+2 – desenhe uma piada
+3 - liste piadas
+X-parar
+3
+Imprimindo as piadas.
+Você ouviu falar do astronauta claustrofóbico? — Ele só precisava de um pouco de espaço.
+Comandos:
+1 – adicione uma piada
+2 – desenhe uma piada
+3 - liste piadas
+X-parar
+X
