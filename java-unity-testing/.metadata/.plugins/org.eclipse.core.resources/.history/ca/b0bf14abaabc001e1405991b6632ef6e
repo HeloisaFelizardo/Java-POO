@@ -1,0 +1,26 @@
+package com.example.demo;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ExerciseManagementApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ExerciseManagementApplication.class, args);
+		ExerciseManagement management = new ExerciseManagement();
+        Exercise exercise1 = new Exercise("New exercise 1");
+        Exercise exercise2 = new Exercise("New exercise 2");
+
+        management.add(exercise1.getName());
+        management.markAsCompleted(exercise1.getName());
+        management.add(exercise2.getName());
+        management.markAsCompleted(exercise2.getName());
+
+        System.out.println("Exercise List: " + management.exerciseList()); 
+        
+        int progress = partsCompleted(management);
+        System.out.println("Progress: " + progress);
+	}
+
+}

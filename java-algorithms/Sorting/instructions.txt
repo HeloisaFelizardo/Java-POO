@@ -1,0 +1,139 @@
+Part 1: Encontrando o menor valor
+Crie na classe MainProgramum método de classe smallest que receba um array inteiro como parâmetro. Deve retornar o menor valor do array.
+
+Aqui está a estrutura do método:
+
+public static int smallest(int[] array){
+    // write your code here
+}
+O próximo exemplo ilustra como o método funciona:
+
+int[] numbers = {6, 5, 8, 7, 11};
+System.out.println("Smallest: " + MainProgram.smallest(numbers));
+Exemplo de saída
+Menor: 5
+
+Part 2: Índice do menor valor
+Crie um método chamado indexOfSmallest na classe MainProgram. Deve retornar o índice do menor número do array que recebe como parâmetro.
+
+Aqui está a estrutura do método:
+
+public static int indexOfSmallest(int[] array){
+    // write your code here
+}
+O código a seguir ilustra como usar o método:
+
+// indices:      0  1  2  3  4
+int[] numbers = {6, 5, 8, 7, 11};
+System.out.println("Index of the smallest number: " + MainProgram.indexOfSmallest(numbers));
+Exemplo de saída
+Índice do menor número: 1
+
+O menor número na matriz é 5 e sua posição na matriz (ou seja, índice) é 1. Lembre-se de que a indexação de uma matriz começa em 0.
+
+Part 3: Índice do menor valor após um determinado valor
+Crie na classe MainProgram um método de classe chamado indexOfSmallestFrom. Funciona de forma semelhante ao método da seção anterior, mas considera apenas os valores da tabela de um determinado índice em diante. Além da tabela, ele recebe como parâmetro esse índice inicial.
+
+A estrutura do método é a seguinte:
+
+public static int indexOfSmallestFrom(int[] table, int startIndex) {
+    // write your code here
+}
+O código a seguir ilustra como o método se expressa:
+
+// indices:       0  1  2  3   4
+int[] numbers = {-1, 6, 9, 8, 12};
+System.out.println(MainProgram.indexOfSmallestFrom(numbers, 0));
+System.out.println(MainProgram.indexOfSmallestFrom(numbers, 1));
+System.out.println(MainProgram.indexOfSmallestFrom(numbers, 2));
+Exemplo de saída
+0 1 3
+
+Neste exemplo, a primeira chamada de método procura o índice do menor número, começando no índice 0. Começando no índice 0, o menor número é -1 e seu índice é 0. A segunda chamada de método procura o índice do menor valor começando no índice 1. Neste caso o menor número é 6 e seu índice é 1. A terceira chama procura o índice do menor valor começando no índice 2. Então o menor número é 8 e seu índice é 3.
+
+Part 4: Trocando números
+Crie um método de classe swap na classe MainProgram. Recebe como parâmetros um array e dois índices dentro dele. O método troca os números desses índices entre si.
+
+A estrutura básica do método é:
+
+public static void swap(int[] array, int index1, int index2) {
+    // write your code here
+}
+O seguinte ilustra como usar o método. Para imprimir um array usamos o toString método de classe da classe Arrays. Ele formata um array em uma string facilmente legível.
+
+int[] numbers = {3, 2, 5, 4, 8};
+
+System.out.println(Arrays.toString(numbers));
+
+MainProgram.swap(numbers, 1, 0);
+System.out.println(Arrays.toString(numbers));
+
+MainProgram.swap(numbers, 0, 3);
+System.out.println(Arrays.toString(numbers));
+Exemplo de saída
+
+[3, 2, 5, 4, 8] [2, 3, 5, 4, 8] [4, 3, 5, 2, 8]
+
+Part 5: Ordenação
+Agora reunimos um conjunto de métodos úteis. Com a ajuda deles, podemos implementar um algoritmo de classificação conhecido pelo nome de classificação por seleção.
+
+A ideia da classificação por seleção é:
+
+Mova o menor número da matriz para o índice 0.
+Mova o segundo menor número para o índice 1.
+Mova o terceiro número menor na matriz para o índice 2.
+Etc.
+Em outras palavras:
+
+Examine a matriz começando no índice 0. Troque os dois números a seguir entre si: o número no índice 0 e o menor número na matriz começando no índice 0.
+Examine a matriz começando no índice 1. Troque os dois números a seguir entre si: o número no índice 1 e o menor número na matriz começando no índice 1.
+Examine a matriz começando no índice 2. Troque os dois números a seguir entre si: o número no índice 2 e o menor número na matriz começando no índice 2.
+Etc.
+Implemente um método de classe chamado sort com base na ideia acima na classe MainProgram. Deve incluir um loop que percorre os índices do array. Certamente o método indexOfSmallestFrom será swap útil. Além disso, imprima o conteúdo da matriz antes da classificação e após cada iteração do loop para garantir que o algoritmo funcione conforme o esperado.
+
+A definição do método fica assim:
+
+public static void sort(int[] array) {
+
+}
+Use pelo menos o exemplo a seguir para testar como o método funciona:
+
+int[] numbers = {8, 3, 7, 9, 1, 2, 4};
+MainProgram.sort(numbers);
+A saída do programa deve ser semelhante à impressão abaixo. Observe que você deve imprimir o conteúdo do array após cada troca!
+
+Exemplo de saída
+
+[8, 3, 7, 9, 1, 2, 4] [1, 3, 7, 9, 8, 2, 4] [1, 2, 7, 9, 8, 3, 4] [1, 2, 3, 9, 8, 7, 4] [1, 2, 3, 4, 8, 7, 9] [1, 2, 3, 4, 7, 8, 9] [1, 2, 3, 4, 7 , 8, 9]
+Marque como o array é classificado aos poucos, começando do início e avançando até o final do array.
+
+Estático ou não
+No início do curso, todos os nossos métodos incluíam o staticmodificador, mas quando começamos a usar objetos, o uso do static modificador foi proibido.
+
+Os métodos em Java podem ser divididos em dois grupos, dependendo se possuem o static modificador ou não. Métodos sem o staticmodificador são métodos de instância . Métodos com o static modificador são métodos de classe
+
+Métodos de instância são métodos associados a um objeto, podem processar as variáveis ​​do objeto e chamar outros métodos do objeto. Os métodos de instância especificamente PODEM usar o thismodificador, que se refere às variáveis ​​​​associadas ao objeto específico, que está chamando o método de instância. Os métodos de classe não podem usar o thismodificador, o que significa que eles só podem acessar as variáveis ​​que recebem como parâmetros ou que eles próprios criam.
+
+Na realidade, os métodos de classe também podem acessar variáveis ​​de classe, entre outras coisas. No entanto, essas coisas estão fora do escopo deste curso.
+
+Algoritmos de classificação integrados em Java
+Java oferece uma quantidade significativa de algoritmos de classificação prontos para uso. Arrays podem ser classificados (em sua ordem natural) usando o método de classe sort da Arrays-class. As listas podem ser classificadas (em sua ordem natural) usando o método de classe sort da Collections classe.
+
+int[] numbers = {8, 3, 7, 9, 1, 2, 4};
+System.out.println(Arrays.toString(numbers));
+Arrays.sort(numbers);
+System.out.println(Arrays.toString(numbers));
+Exemplo de saída
+
+[8, 3, 7, 9, 1, 2, 4] [1, 2, 3, 4, 7, 8, 9]
+ArrayList<Integer> numbers = new ArrayList<>();
+numbers.add(8);
+numbers.add(3);
+numbers.add(7);
+System.out.println(numbers);
+Collections.sort(numbers);
+System.out.println(numbers);
+Exemplo de saída
+
+[8, 3, 7] [3, 7, 8]
+Os algoritmos de classificação integrados do Java funcionam com variáveis ​​de tipo de valor e algumas variáveis ​​de tipo de referência integradas do Java, como String. Para que nossas próprias classes sejam classificadas, precisamos fornecer ao Java algumas dicas sobre como fazer isso, porque as classes em si não contêm informações sobre como os objetos criados a partir delas devem ser ordenados. 
