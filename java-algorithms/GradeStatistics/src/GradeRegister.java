@@ -66,7 +66,7 @@ public class GradeRegister {
     }
 
     // Método para contar o número de ocorrências de cada nota e imprimir a distribuição de notas
-    public int gradeDistribution() {
+    public void gradeDistribution() {
         for (int point : points) {
             if (point < 50) {
                 gradeCounts[0]++; // Incrementa o contador da nota 0
@@ -81,9 +81,7 @@ public class GradeRegister {
             } else {
                 gradeCounts[5]++; // Incrementa o contador da nota 5
             }
-        }
-        // Aqui, você precisará determinar qual nota tem mais ocorrências e retornar essa nota
-        return 5; // Apenas retornando a nota 5 como exemplo
+        }       
     }
 
     // Método para imprimir a distribuição de notas
@@ -98,5 +96,4 @@ public class GradeRegister {
         }
         return distribution; // Retorna a distribuição de notas como uma string
     }
-
 }
