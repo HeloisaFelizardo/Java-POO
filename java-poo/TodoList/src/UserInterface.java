@@ -2,11 +2,11 @@
 import java.util.Scanner;
 
 public class UserInterface {
-    final private TodoList list;
+    final private TodoList todoList;
     final private Scanner scanner;
     
-    public UserInterface(TodoList list, Scanner scanner){
-        this.list = list;
+    public UserInterface(TodoList todoList, Scanner scanner){
+        this.todoList = todoList;
         this.scanner = scanner;
     }
     
@@ -22,17 +22,17 @@ public class UserInterface {
                 case "add": {
                     System.out.println("To add: ");
                     String task = scanner.nextLine();                    
-                    list.add(task);
+                    todoList.add(task);
                     break;
                 }
                 case "list": {
-                    list.print();                   
+                	todoList.print();                   
                     break;
                 }
                 case "remove": {
                     System.out.println("Which one is removed? ");
                     int index = Integer.valueOf(scanner.nextLine());
-                    list.remove(index);
+                    todoList.remove(index);
                     break;
                 }
                 default:

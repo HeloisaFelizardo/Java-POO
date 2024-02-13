@@ -1,23 +1,30 @@
-
 import java.util.ArrayList;
-
+ 
 public class TodoList {
-    private ArrayList<String> list;
-    
-    public TodoList(){
-        this.list = new ArrayList<>();
+ 
+    private ArrayList<String> tasks;
+ 
+    public TodoList() {
+        this.tasks = new ArrayList<>();
     }
-    
-    public void add(String task){
-        list.add(task);
+ 
+    public void add(String task) {
+        this.tasks.add(task);
     }
-    
-    public void print(){
-        for(int i = 0; i < list.size(); i++){
-            System.out.println((i + 1) + ": " + list.get(i));
+ 
+    public void print() {
+        for (int i = 0; i < this.tasks.size(); i++) {
+            System.out.println((i + 1) + ": " + this.tasks.get(i));
         }
     }
-    public void remove(int number){
-        list.remove(number - 1);
+ 
+    public void remove(int number) {
+        int index = number - 1;
+        if (index < 0 || index >= this.tasks.size()) {
+            return;
+        }
+ 
+        this.tasks.remove(index);
     }
+ 
 }
